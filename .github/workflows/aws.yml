@@ -53,7 +53,7 @@ jobs:
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: 884185907314.dkr.ecr.ap-southeast-1.amazonaws.com/nestjs-service-demo
+        ECR_REPOSITORY: nestjs-service-demo
         IMAGE_TAG: latest
       run: |
         # Build a docker container and

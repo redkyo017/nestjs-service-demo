@@ -1,29 +1,10 @@
 {
-    "requiresCompatibilities": [
-        "FARGATE"
-    ],
+    "ipcMode": null,
+    "executionRoleArn": "arn:aws:iam::884185907314:role/ecsTaskExecutionRole",
     "containerDefinitions": [
         {
-            "name": "nestjs-service-container",
-            "image": "884185907314.dkr.ecr.ap-southeast-1.amazonaws.com/nestjs-service-demo:latest",
-            "memoryReservation": "",
-            "resourceRequirements": null,
-            "essential": true,
-            "portMappings": [
-                {
-                    "containerPort": "3000",
-                    "protocol": "tcp"
-                }
-            ],
-            "environment": null,
+            "dnsSearchDomains": null,
             "environmentFiles": [],
-            "secrets": null,
-            "mountPoints": null,
-            "volumesFrom": null,
-            "hostname": null,
-            "user": null,
-            "workingDirectory": null,
-            "extraHosts": null,
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
@@ -32,20 +13,68 @@
                     "awslogs-stream-prefix": "ecs"
                 }
             },
+            "entryPoint": null,
+            "portMappings": [
+                {
+                    "hostPort": 3000,
+                    "protocol": "tcp",
+                    "containerPort": 3000
+                }
+            ],
+            "command": null,
+            "linuxParameters": null,
+            "cpu": 0,
+            "environment": [
+                {
+                    "name": "TEST_PARAM",
+                    "value": "test1"
+                }
+            ],
+            "resourceRequirements": null,
             "ulimits": null,
-            "dockerLabels": null,
+            "dnsServers": null,
+            "mountPoints": null,
+            "workingDirectory": null,
+            "secrets": null,
+            "dockerSecurityOptions": null,
+            "memory": null,
+            "memoryReservation": null,
+            "volumesFrom": null,
+            "stopTimeout": null,
+            "image": "884185907314.dkr.ecr.ap-southeast-1.amazonaws.com/nestjs-service-demo:latest",
+            "startTimeout": null,
+            "firelensConfiguration": null,
             "dependsOn": null,
+            "disableNetworking": null,
+            "interactive": null,
+            "healthCheck": null,
+            "essential": true,
+            "links": null,
+            "hostname": null,
+            "extraHosts": null,
+            "pseudoTerminal": null,
+            "user": null,
+            "readonlyRootFilesystem": null,
+            "dockerLabels": null,
+            "systemControls": null,
+            "privileged": null,
+            "name": "nestjs-service-container",
             "repositoryCredentials": {
                 "credentialsParameter": ""
             }
         }
     ],
-    "volumes": [],
-    "networkMode": "awsvpc",
     "memory": "512",
-    "cpu": "256",
-    "executionRoleArn": "arn:aws:iam::884185907314:role/ecsTaskExecutionRole",
-    "family": "nestjs-service-task",
     "taskRoleArn": "arn:aws:iam::884185907314:role/ecsTaskExecutionRole",
+    "family": "nestjs-service-task",
+    "pidMode": null,
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "networkMode": "awsvpc",
+    "cpu": "256",
+    "inferenceAccelerators": null,
+    "proxyConfiguration": null,
+    "volumes": [],
     "tags": []
 }
